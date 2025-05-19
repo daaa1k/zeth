@@ -1,0 +1,84 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.38.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           zeth
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/zeth#readme>
+homepage:       https://github.com/githubuser/zeth#readme
+bug-reports:    https://github.com/githubuser/zeth/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2025 Author name here
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/zeth
+
+library
+  exposed-modules:
+      Zettelkasten
+  other-modules:
+      Paths_zeth
+  autogen-modules:
+      Paths_zeth
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , filepath
+    , optparse-applicative
+    , process
+    , time
+  default-language: Haskell2010
+
+executable zeth-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_zeth
+  autogen-modules:
+      Paths_zeth
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , filepath
+    , optparse-applicative
+    , process
+    , time
+    , zeth
+  default-language: Haskell2010
+
+test-suite zeth-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_zeth
+  autogen-modules:
+      Paths_zeth
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+    , directory
+    , filepath
+    , optparse-applicative
+    , process
+    , temporary
+    , time
+    , zeth
+  default-language: Haskell2010
